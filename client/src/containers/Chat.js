@@ -3,21 +3,17 @@ import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import * as urls from 'constants/urls';
-import MessageList from "components/MessageList";
-import MessageInput from "components/MessageInput";
 import { websocketSend } from 'actions/websocket';
 import * as websocketActions from 'constants/websocketActions';
 import { messageShape } from 'constants/propTypeShapes';
+import Messenger from 'components/Messenger';
 
 class Chat extends React.Component {
   render() {
     const {username, messages, sendMessageFactory} = this.props;
     if (this.props.username === null) return <Redirect to={urls.login}/>;
 
-    return <>
-      <MessageList messages={messages}/>
-      <MessageInput sendMessage={sendMessageFactory(username)}/>
-    </>;
+    return <Messenger messages={messages} sendMessage={sendMessageFactory(username)}/>;
   }
 }
 

@@ -1,8 +1,6 @@
 import { WEBSOCKET_CONNECT, WEBSOCKET_DISCONNECT, WEBSOCKET_SEND } from '@giantmachines/redux-websocket'
 import { chatSocket } from 'constants/api';
 
-console.log(chatSocket);
-
 export const websocketConnect = () => ({
   type: WEBSOCKET_CONNECT,
   payload: {
