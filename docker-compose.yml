@@ -21,6 +21,16 @@ services:
     depends_on:
       - db
       - redis
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+    command: npm start
+    volumes:
+      - ./client/:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
 
 volumes:
   postgres:

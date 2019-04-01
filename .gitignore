@@ -1,4 +1,9 @@
+.DS_Store
 venv
 .idea
 *.sqlite3
 *.pyc
+npm-debug.log*
+
+/client/node_modules
+/client/build
