@@ -26,8 +26,13 @@ class MessageInput extends React.Component {
   };
 
   componentDidMount() {
-    this.textareaRef.current.focus();
     window.addEventListener('keydown', this.metaEnterSubmit);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!this.props.disabled && prevProps.disabled) {
+      this.textareaRef.current.focus();
+    }
   }
 
   componentWillUnmount() {
@@ -48,6 +53,7 @@ class MessageInput extends React.Component {
       <InputForm onSubmit={this.handleSubmit}>
         <InputArea
           maxLength={4096}
+          disabled={this.props.disabled}
           ref={this.textareaRef}
           value={this.state.message}
           placeholder='Your message'
@@ -60,6 +66,7 @@ class MessageInput extends React.Component {
 
 MessageInput.propTypes = {
   sendMessage: propTypes.func.isRequired,
+  disabled: propTypes.bool.isRequired,
 };
 
 

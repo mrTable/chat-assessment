@@ -3,15 +3,19 @@ import MessageList from './MessageList';
 import MessageInput from './MessageInput';
 import propTypes from 'prop-types';
 import { messageShape } from 'constants/propTypeShapes';
-import { Wrapper } from 'components/Messenger/styled';
+import { ListWrapper, Wrapper, Loader } from 'components/Messenger/styled';
 
 class Messenger extends React.Component {
   render() {
     const {messages, sendMessage} = this.props;
+    const messagesExist = messages !== null;
+    const listContent = messagesExist ? <MessageList messages={messages}/> : <Loader/>;
     return (
       <Wrapper>
-        <MessageList messages={messages}/>
-        <MessageInput sendMessage={sendMessage}/>
+        <ListWrapper>
+          {listContent}
+        </ListWrapper>
+        <MessageInput sendMessage={sendMessage} disabled={!messagesExist}/>
       </Wrapper>
     );
   }
