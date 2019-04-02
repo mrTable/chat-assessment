@@ -1,11 +1,12 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Message(models.Model):
     # TODO authentication
     username = models.CharField(max_length=127)
     content = models.TextField(max_length=4096)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=timezone.now)
 
     def save(self, *args, **kwargs):
         self.full_clean()
