@@ -6,6 +6,7 @@
     "@giantmachines/redux-websocket": "^0.3.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-app-polyfill": "^0.2.2",
     "react-dom": "^16.8.6",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
@@ -14,6 +15,7 @@
     "redux": "^4.0.1",
     "redux-act": "^1.7.4",
     "redux-logger": "^3.0.6",
+    "string.prototype.startswith": "^0.2.0",
     "styled-components": "^4.2.0"
   },
   "scripts": {
@@ -28,7 +30,7 @@
   "browserslist": [
     ">0.2%",
     "not dead",
-    "not ie <= 11",
+    "not ie < 11",
     "not op_mini all"
   ]
 }
