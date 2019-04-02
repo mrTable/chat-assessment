@@ -1,8 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import { purple } from 'constants/colors';
+import styledNormalize from 'styled-normalize'
 
 // TODO root style doesn't belong here
 export const GlobalStyle = createGlobalStyle`
+  ${styledNormalize}
   html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -22,6 +24,9 @@ export const GlobalStyle = createGlobalStyle`
   *:after,
   *:before {
     box-sizing: inherit;
+  }
+  input {
+    border-radius: 0;
   }
   #root {
     height: 100vh;
