@@ -30,6 +30,10 @@ export default function(state = null, action) {
           }
           return data.messages.map(getFormattedMessage);
         case websocketActions.newMessage:
+          // FIXME there's a case of a missing message for you right there
+          if (state === null) {
+            return state;
+          }
           // TODO sorting so that messages are always in chronological order
           return [...state, getFormattedMessage(data.message)];
         default:
