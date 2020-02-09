@@ -1,7 +1,10 @@
+## The project
+Test assessment for SberBank.
+
 ### Live version
 
-Live version lives [here](http://chat.mrtable.iocats.xyz/).
-Note that the chatroom is preloaded with 10K of messages.
+~~Live version lives [here](http://chat.mrtable.iocats.xyz/).
+Note that the chatroom is preloaded with 10K of messages.~~
 
 
 ### Development version
